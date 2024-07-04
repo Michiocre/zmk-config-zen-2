@@ -4,55 +4,135 @@
 #include "keys_de.h"
 
 / {
-    chosen {
-        zmk,matrix_transform = &default_transform;
-        //zmk,matrix_transform = &five_column_transform;
-    };
+     chosen {
+          zmk,matrix_transform = &default_transform;
+          //zmk,matrix_transform = &five_column_transform;
+     };
 
-    behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
-            tapping-term-ms = <180>;
-            bindings = <&mo 1>, <&kp LGUI>;
-        };
-    };
-    keymap {
-            compatible = "zmk,keymap";
+     behaviors {
+          td0: tap_dance_0 {
+               compatible = "zmk,behavior-tap-dance";
+               label = "TAP_DANCE_0";
+               #binding-cells = <0>;
+               tapping-term-ms = <180>;
+               bindings = <&mo 1>, <&kp LGUI>;
+          };
+          semi: semic_colon {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_SEMI>, <&kp DE_COLON>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          
+          del: bsp_del {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp BSPC>, <&kp DEL>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          sqt: sqt_hash {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_SQT>, <&kp DE_HASH>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n1: n1 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N1>, <&kp F1>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n2: n2 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N2>, <&kp F2>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n3: n3 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N3>, <&kp F3>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n4: n4 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N4>, <&kp F4>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n5: n5 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N5>, <&kp F5>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n6: n6 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N6>, <&kp F6>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n7: n7 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N7>, <&kp F7>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n8: n8 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N8>, <&kp F8>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n9: n9 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N9>, <&kp F9>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          n0: n0 {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_N0>, <&kp F10>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+     };
 
-            default_layer {
-                    label = "QWERTY";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R   |  T  ||  Y  |  U   |  I  |  O  |  P  | ESC |
-// | MINUS|  A  |  S  |  D  |  F   |  G  ||  H  |  J   |  K  |  L  |  ;  |  '  |
-// | SHFT |  Z  |  X  |  C  |  V   |  B  ||  N  |  M   |  ,  |  .  |  /  | RET |
-//                    | LALT| CTRL | SPC || BSPC| RSE  | GUI |
+     keymap {
+          compatible = "zmk,keymap";
+
+          default_layer {
+               label = "QWERTY"; //Layer 0
+//   ------------------------------------------------------------------------------------------------------------------------------
+//   |  TAB    |    Q    |    W    |    E    |    R    |    T    |    |    Y    |    U    |    I    |    O    |    P    |   ESC   |
+//   |NUMBER   |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '#   |
+//   | SHFT    |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,;   |    .:   |    -_   |   RET   |
+//                                 |   LALT  |   CTRL  |   SPC   |    |   BSPC  |   RSE   |   GUI   |
+               bindings = <
+     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp ESC
+     &mo 1     &kp A     &kp S     &kp D     &kp F     &kp G          &kp H     &kp J     &kp K     &kp L     &semi     &sqt
+     &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B          &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RET
+                                   &kp LALT  &kp LCTRL &kp SPACE      &del      &mo 2     &td0
+               >;
+          };
+               
+          lower_layer {
+               label = "NUMBER"; //Layer 1
+//   ------------------------------------------------------------------------------------------------------------------------------
+//   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |         |
+//   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |         |
+//   |         |         |         |         |         |         |    |         |         |         |         |         |         |
+//                                 |         |         |         |    |         |mo 3     |         |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp ESC
-   &kp MINUS &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp DE_SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RET
-             &kp LALT  &kp LCTRL &kp SPACE   &kp BSPC &mo 2 &td0
-                        >;
-            };
-            
-            lower_layer {
-                    label = "NUMBER";
-// -----------------------------------------------------------------------------------------
-// |     |     | INS |HOME |PG_UP|     ||    |    |    |PSCRN|SLCK |PAUSE_BREAK|
-// |     |     | DEL | END |PG_DN|     ||    |    |    |LBKT | UP  |   RBKT    |
-// |     |     |     |     |     |     ||    |    |    |LEFT |DOWN |   RIGHT   |
-//                   |     |     |     ||    |mo 3|    |
-                        bindings = <
-  &trans &trans &kp INS &kp HOME &kp PG_UP &trans  &trans &trans &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK
-  &trans &trans &kp DEL &kp END  &kp PG_DN &trans  &trans &trans &trans &kp LBKT  &kp UP   &kp RBKT
-  &trans &trans &trans  &trans   &trans    &trans  &trans &trans &trans &kp LEFT  &kp DOWN &kp RIGHT
-                        &trans   &trans    &trans  &trans &mo 3  &trans
+     &n1       &n2       &n3       &n4       &n5       &n6            &trans    &trans    &kp UP    &trans    &trans    &trans
+     &n7       &n8       &N9       &n0       &trans    &trans         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
+     &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans
+                                   &trans    &trans    &trans         &trans    &mo 3     &tran
                     >;
             };
             
             raise_layer {
-                    label = "SYMBOL";
+                    label = "SYMBOL"; //Layer 2
 // -----------------------------------------------------------------------------------------
 // |    |CAPS| F1 | F2 | F3 | F4 ||NUBS|  7 |  8  |  9  |  0  | DEL |
 // |NUHS|    | F5 | F6 | F7 | F8 ||LBKT|  4 |  5  |  6  |MINUS|EQUAL|
@@ -67,7 +147,7 @@
             };
 
             bt_layer {
-                    label = "BLUETOOTH";
+                    label = "BLUETOOTH"; //Layer 3
 // -----------------------------------------------------------------------------------------
 // |    |BT 1|BT 2|BT 3|BT 4|BT 5||    |    |    |    |    |BT CLR|
 // |    |    |    |    |    |    ||    |    |    |    |    |      |
