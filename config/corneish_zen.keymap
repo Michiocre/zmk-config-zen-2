@@ -125,7 +125,7 @@
 //                                 |         |         |         |    |         |mo 3     |         |
                         bindings = <
      &n1       &n2       &n3       &n4       &n5       &n6            &trans    &trans    &kp UP    &trans    &trans    &trans
-     &n7       &n8       &N9       &n0       &trans    &trans         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
+     &n7       &n8       &n9       &n0       &trans    &trans         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
      &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans
                                    &trans    &trans    &trans         &trans    &mo 3     &tran
                     >;
