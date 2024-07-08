@@ -40,7 +40,7 @@
           qt: qt_sqt {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
-               bindings = <&kp DE_DQT>, <&kp DE_SQT>;
+               bindings = <&kp DE_SQT>, <&kp DE_DQT>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           comma: comma_exc {
@@ -65,8 +65,8 @@
                label = "QWERTY"; //Layer 0
 //   ------------------------------------------------------------------------------------------------------------------------------
 //   |  TAB    |    Q    |    W    |    E    |    R    |    T    |    |    Y    |    U    |    I    |    O    |    P    |   ESC   |
-//   |NUMBER   |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '#   |
-//   | SHFT    |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,;   |    .:   |    -_   |   RET   |
+//   |NUMBER   |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '"   |
+//   | SHFT    |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,!   |    .?   |    -_   |   RET   |
 //                                 |   LALT  |   CTRL  |   SPC   |    |   BSPC  |   RSE   |   GUI   |
                bindings = <
      &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp ESC
@@ -125,13 +125,13 @@
                label = "GAMING"; //Layer 4
 //   ------------------------------------------------------------------------------------------------------------------------------
 //   |  TAB    |    Q    |    W    |    E    |    R    |    T    |    |    Y    |    U    |    I    |    O    |    P    |   ESC   |
-//   |NUMBER   |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '#   |
-//   | SHFT    |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,;   |    .:   |    -_   |   RET   |
+//   |NUMBER   |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '"   |
+//   | SHFT    |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,!   |    .?   |    -_   |   RET   |
 //                                 |   LALT  |   CTRL  |   SPC   |    |   BSPC  |   RSE   |   GUI   |
                bindings = <
      &kp TAB   &kp T     &kp Q     &kp W     &kp E     &kp R          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp ESC
-     &trans    &kp G     &kp A     &kp S     &kp D     &kp F          &kp H     &kp J     &kp K     &kp L     &semi     &sqt
-     &kp LSHFT &kp B     &kp Z     &kp X     &kp C     &kp V          &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RET
+     &trans    &kp G     &kp A     &kp S     &kp D     &kp F          &kp H     &kp J     &kp K     &kp L     &semi     &qt
+     &kp LSHFT &kp B     &kp Z     &kp X     &kp C     &kp V          &kp N     &kp M     &comma    &dot      &kp FSLH  &kp RET
                                    &kp LALT  &kp LCTRL &kp SPACE      &del      &to 0     &to 0
                >;
           };
