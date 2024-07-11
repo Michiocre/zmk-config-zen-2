@@ -109,6 +109,12 @@
                bindings = <&kp DE_EQUAL>, <&kp DE_GRAVE>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
+          hash: hash_eszett {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_HASH>, <&kp DE_SHARP_S>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
 
      };
 
@@ -149,12 +155,12 @@
                label = "SYMBOL"; //Layer 2 todo
 //   ------------------------------------------------------------------------------------------------------------------------------
 //   |         |    @    |   &|    |   {<    |    }>   |   =`    |    |         |    Ü    |         |    Ö    |         |         |
-//   |         |    Ä    |   ß     |   ([    |    )]   |   /\    |    |         |         |         |         |         |         |
+//   |         |    Ä    |   #ß    |   ([    |    )]   |   /\    |    |         |         |         |         |         |         |
 //   |         |    €    |   ^°    |   +*    |    -$   |   %~    |    |         |         |         |         |         |         |
 //                                 |         |         |         |    |         |         |         |
                bindings = <
      &trans    &kp DE_AT &and      &l_squ    &r_squ    &equal         &trans    &kp LBKT  &trans    &kp SEMI  &trans    &trans
-     &trans    &kp APOS  &kp MINUS &l_par    &r_par    &slash         &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &kp APOS  &hash     &l_par    &r_par    &slash         &trans    &trans    &trans    &trans    &trans    &trans
      &trans    &kp DE_EURO &kp TILDE &kp RBKT &min     &perc          &trans    &trans    &trans    &trans    &trans    &trans
                                    &trans    &trans    &trans         &trans    &trans    &trans
                >;
