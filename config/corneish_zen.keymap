@@ -55,6 +55,18 @@
                bindings = <&kp DE_DOT>, <&kp DE_QMARK>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
+          l_par: l_par {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_LPAR>, <&kp DE_LEFT_BRACKET>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          r_par: r_par {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DE_RPAR>, <&kp DE_RIGHT_BRACKET>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
 
      };
 
@@ -80,29 +92,29 @@
                label = "NUMBER"; //Layer 1
 //   ------------------------------------------------------------------------------------------------------------------------------
 //   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |         |
-//   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |         |
-//   |         |         |         |         |         |         |    |         |         |         |         |         |         |
+//   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |  GAMING |
+//   |         |         |         |         |         |         |    |         |         |         |         |  pipe   |         |
 //                                 |         |         |         |    |         |mo 3     |         |
                         bindings = <
      &trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &trans    &trans    &kp UP    &trans    &trans    &trans
-     &trans    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
-     &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &to 4
+     &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &kp DE_PIPE  &trans
                                    &trans    &trans    &trans         &trans    &mo 3     &trans
                     >;
             };
             
-            raise_layer {
+          raise_layer {
                     label = "SYMBOL"; //Layer 2 todo
-// -----------------------------------------------------------------------------------------
-// |    |CAPS| F1 | F2 | F3 | F4 ||NUBS|  7 |  8  |  9  |  0  | DEL |
-// |NUHS|    | F5 | F6 | F7 | F8 ||LBKT|  4 |  5  |  6  |MINUS|EQUAL|
-// |    |    | F9 | F10| F11| F12||RBKT|  1 |  2  |  3  | DOT |GRAVE|
-//                |    |    |    ||    |    |  ~  |
+//   ------------------------------------------------------------------------------------------------------------------------------
+//   |         |         |         |   {<    |    }>   |    &|   |    |         |         |         |         |         |         |
+//   |         |         |         |   ([    |    )]   |    /\   |    |         |         |         |         |         |         |
+//   |         |         |         |   +*    |    -$   |         |    |         |         |         |         |         |         |
+//                                 |         |         |         |    |         |         |         |
                         bindings = <
-  &trans     &kp CAPS &kp F1 &kp F2  &kp F3  &kp F4  &kp NUBS &kp N7 &kp N8 &kp N9 &kp N0    &kp DEL
-  &trans     &trans   &kp F5 &kp F6  &kp F7  &kp F8  &kp LBKT &kp N4 &kp N5 &kp N6 &kp MINUS &kp EQUAL 
-  &trans     &trans   &kp F9 &kp F10 &kp F11 &kp F12 &kp RBKT &kp N1 &kp N2 &kp N3 &kp DOT   &kp GRAVE 
-                         &trans  &trans   &to 4 &trans &trans
+     &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &trans    &trans    &l_par    &r_par    &trans         &trans    &trans    &trans    &trans    &trans    &trans
+     &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &trans    &trans
+                                   &trans    &trans    &trans         &trans    &trans     &trans
                     >;
             };
 
