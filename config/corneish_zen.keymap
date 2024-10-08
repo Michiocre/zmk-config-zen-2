@@ -29,7 +29,7 @@
                #binding-cells = <0>;
                bindings = <&td_num>, <&kp ESC>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
-          }
+          };
           semi: semic_colon {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
