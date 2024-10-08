@@ -24,6 +24,12 @@
                tapping-term-ms = <180>;
                bindings = <&mo 1>, <&sl 5>;
           };
+          morph_esc: morph {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&td_num>, <&kp ESC>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          }
           semi: semic_colon {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -139,18 +145,18 @@
           lower_layer {
                label = "NUMBER"; //Layer 1
 //   ------------------------------------------------------------------------------------------------------------------------------
-//   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |         |
-//   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |  GAMING |
+//   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |  GAMING |
+//   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |         |
 //   |         |         |         |         |         |         |    |         |         |         |         |  pipe   |         |
 //                                 |         |         |         |    |         |mo 3     |         |
                bindings = <
-     &trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &trans    &trans    &kp UP    &trans    &trans    &trans
-     &trans    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &to 4
+     &trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &trans    &trans    &kp UP    &trans    &trans    &to 4
+     &trans    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
      &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &kp DE_PIPE  &trans
                                    &trans    &trans    &trans         &trans    &mo 3     &trans
                >;
           };
-            
+                   
           raise_layer {
                label = "SYMBOL"; //Layer 2 todo
 //   ------------------------------------------------------------------------------------------------------------------------------
