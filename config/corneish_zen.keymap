@@ -22,7 +22,7 @@
                label = "TAP_DANCE_NUM";
                #binding-cells = <0>;
                tapping-term-ms = <180>;
-               bindings = <&mo 1>, <&sl 5>;
+               bindings = <&mo 1>, <&sl 4>;
           };
           morph_esc: morph {
                compatible = "zmk,behavior-mod-morph";
@@ -145,12 +145,12 @@
           lower_layer {
                label = "NUMBER"; //Layer 1
 //   ------------------------------------------------------------------------------------------------------------------------------
-//   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |  GAMING |
+//   |  1F1    |  2F2    |  3F3    |  4F4    |  5F5    |  6F6    |    |         |         |   UP    |         |         |         |
 //   |  7F7    |  8F8    |  9F9    |  0F10   |         |         |    |         |  LEFT   |  DOWN   |  RIGHT  |         |         |
 //   |         |         |         |         |         |         |    |         |         |         |         |  pipe   |         |
 //                                 |         |         |         |    |         |mo 3     |         |
                bindings = <
-     &trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &trans    &trans    &kp UP    &trans    &trans    &to 4
+     &trans    &kp N1    &kp N2    &kp N3    &kp N4    &kp N5         &trans    &trans    &kp UP    &trans    &trans    &trans
      &trans    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0         &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
      &trans    &trans    &trans    &trans    &trans    &trans         &trans    &trans    &trans    &trans    &kp DE_PIPE  &trans
                                    &trans    &trans    &trans         &trans    &mo 3     &trans
@@ -186,24 +186,9 @@
                                    &trans    &trans    &trans         &trans    &trans    &trans
                >;
           };
-                
-          gaming_layer {
-               label = "GAMING"; //Layer 4
-//   ------------------------------------------------------------------------------------------------------------------------------
-//   |   TAB   |    Q    |    W    |    E    |    R    |    T    |    |    Y    |    U    |    I    |    O    |    P    |   ESC   |
-//   | NUMBER  |    A    |    S    |    D    |    F    |    G    |    |    H    |    J    |    K    |    L    |    ;:   |    '"   |
-//   |  SHFT   |    Z    |    X    |    C    |    V    |    B    |    |    N    |    M    |    ,!   |    .?   |    -_   |   RET   |
-//                                 |   LALT  |   CTRL  |   SPC   |    |   BSPC  |   RSE   |   GUI   |
-               bindings = <
-     &kp TAB   &kp T     &kp Q     &kp W     &kp E     &kp R          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp ESC
-     &trans    &kp G     &kp A     &kp S     &kp D     &kp F          &kp H     &kp J     &kp K     &kp L     &semi     &qt
-     &kp LSHFT &kp B     &kp Z     &kp X     &kp C     &kp V          &kp N     &kp M     &comma    &dot      &kp FSLH  &kp RET
-                                   &kp LALT  &kp LCTRL &kp SPACE      &del      &to 0     &to 0
-               >;
-          };
           
           fkey_layer {
-               label = "F_NUMBER"; //Layer 5
+               label = "F_NUMBER"; //Layer 4
 //   ------------------------------------------------------------------------------------------------------------------------------
 //   |         |   F1    |   F2    |   F3    |   F4    |   F5    |    |         |         |         |         |         |         |
 //   |         |   F6    |   F7    |   F8    |   F9    |   F10   |    |         |         |         |         |         |         |
